@@ -1,0 +1,208 @@
+{
+ "model": "hyb_gru_alibi",
+ "repo": "(new) hybrid: GRU layer + x-transformers decoder",
+ "target_repo": "LM_Dec_Long_HybridGRU_ALiBi",
+ "category": "Long",
+ "upstream": "lucidrains/x-transformers (MIT), pip 2.31.7 + torch.nn.GRU",
+ "unified": [
+  "1 GRU layer (dim 512) added residually before a 6-layer alibi decoder (same decoder as xt_alibi)"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "lm05v3long",
+ "started": "2026-11-04 00:37:24",
+ "smoke": false,
+ "levels": {
+  "4": {
+   "queries": 1,
+   "distinct": true,
+   "steps": 30000,
+   "capped": false,
+   "diverged": false,
+   "bf16": true,
+   "final_loss": 2.5219837880285922e-06,
+   "minutes": 178.4,
+   "history": [
+    {
+     "step": 2500,
+     "loss": 1.7018238306045532,
+     "acc": 0.5
+    },
+    {
+     "step": 5000,
+     "loss": 0.00026237720157951117,
+     "acc": 1.0
+    },
+    {
+     "step": 7500,
+     "loss": 6.724103059241315e-06,
+     "acc": 1.0
+    },
+    {
+     "step": 10000,
+     "loss": 3.5217104596085846e-05,
+     "acc": 1.0
+    },
+    {
+     "step": 12500,
+     "loss": 1.4603101590182632e-06,
+     "acc": 1.0
+    },
+    {
+     "step": 15000,
+     "loss": 1.8067536302623921e-06,
+     "acc": 1.0
+    },
+    {
+     "step": 17500,
+     "loss": 4.302492470742436e-06,
+     "acc": 1.0
+    },
+    {
+     "step": 20000,
+     "loss": 0.00013119977666065097,
+     "acc": 1.0
+    },
+    {
+     "step": 22500,
+     "loss": 1.4789192164244014e-06,
+     "acc": 0.984375
+    },
+    {
+     "step": 25000,
+     "loss": 1.0058280963676225e-07,
+     "acc": 0.984375
+    },
+    {
+     "step": 27500,
+     "loss": 3.37804012815468e-05,
+     "acc": 1.0
+    },
+    {
+     "step": 30000,
+     "loss": 2.5219837880285922e-06,
+     "acc": 1.0
+    }
+   ],
+   "test": {
+    "512": {
+     "normal": 1.0,
+     "keys": 0.060546875,
+     "values": 0.017578125,
+     "true_recall": 0.939453125
+    },
+    "2048": {
+     "normal": 0.982421875,
+     "keys": 0.0078125,
+     "values": 0.017578125,
+     "true_recall": 0.974609375
+    },
+    "8192": {
+     "normal": 0.056640625,
+     "keys": 0.015625,
+     "values": 0.013671875,
+     "true_recall": 0.041015625
+    }
+   },
+   "value_set_baseline": 0.25,
+   "chance": 0.015625,
+   "micro_batch": 2
+  },
+  "16": {
+   "queries": 4,
+   "distinct": true,
+   "steps": 30000,
+   "capped": false,
+   "diverged": false,
+   "bf16": true,
+   "final_loss": 1.2107189917287542e-08,
+   "minutes": 180.9,
+   "history": [
+    {
+     "step": 2500,
+     "loss": 3.8918399810791016,
+     "acc": 0.078125
+    },
+    {
+     "step": 5000,
+     "loss": 1.705370545387268,
+     "acc": 0.578125
+    },
+    {
+     "step": 7500,
+     "loss": 2.2995263861957937e-05,
+     "acc": 1.0
+    },
+    {
+     "step": 10000,
+     "loss": 1.802100541681284e-06,
+     "acc": 1.0
+    },
+    {
+     "step": 12500,
+     "loss": 1.6335034160874784e-06,
+     "acc": 1.0
+    },
+    {
+     "step": 15000,
+     "loss": 3.830409696092829e-05,
+     "acc": 1.0
+    },
+    {
+     "step": 17500,
+     "loss": 1.6950058068232465e-07,
+     "acc": 1.0
+    },
+    {
+     "step": 20000,
+     "loss": 2.828229526130599e-06,
+     "acc": 1.0
+    },
+    {
+     "step": 22500,
+     "loss": 1.1669246759993257e-06,
+     "acc": 1.0
+    },
+    {
+     "step": 25000,
+     "loss": 1.5180536649950227e-07,
+     "acc": 1.0
+    },
+    {
+     "step": 27500,
+     "loss": 6.984916467445146e-08,
+     "acc": 1.0
+    },
+    {
+     "step": 30000,
+     "loss": 1.2107189917287542e-08,
+     "acc": 1.0
+    }
+   ],
+   "test": {
+    "512": {
+     "normal": 0.99951171875,
+     "keys": 0.02392578125,
+     "values": 0.0166015625,
+     "true_recall": 0.9755859375
+    },
+    "2048": {
+     "normal": 0.99462890625,
+     "keys": 0.015625,
+     "values": 0.0146484375,
+     "true_recall": 0.97900390625
+    },
+    "8192": {
+     "normal": 0.02001953125,
+     "keys": 0.013671875,
+     "values": 0.01416015625,
+     "true_recall": 0.00634765625
+    }
+   },
+   "value_set_baseline": 0.0625,
+   "chance": 0.015625,
+   "micro_batch": 2
+  }
+ },
+ "seconds": 21563.3
+}
